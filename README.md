@@ -1,7 +1,7 @@
 # GitHub Deployment Workflow
 
 This project demonstrates a simple Continuous Integration and Continuous Deployment (CI/CD)
-pipeline using GitHub Actions.
+pipeline using GitHub Actions. https://roadmap.sh/projects/github-actions-deployment-workflow
 
 ## Features
 - Deploys a static website to GitHub Pages
