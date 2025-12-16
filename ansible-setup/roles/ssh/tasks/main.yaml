@@ -1,0 +1,5 @@
+- name: Add SSH public key
+  authorized_key:
+    user: ubuntu
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  tags: ssh

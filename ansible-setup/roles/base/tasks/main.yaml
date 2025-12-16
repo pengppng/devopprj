@@ -1,0 +1,29 @@
+- name: Update apt cache
+  apt:
+    update_cache: yes
+  tags: base
+
+- name: Upgrade packages
+  apt:
+    upgrade: dist
+  tags: base
+
+- name: Install basic utilities
+  apt:
+    name:
+      - curl
+      - wget
+      - git
+      - unzip
+      - vim
+      - fail2ban
+    state: present
+  tags: base
+
+- name: Enable fail2ban
+  service:
+    name: fail2ban
+    state: started
+    enabled: yes
+  tags: base
+

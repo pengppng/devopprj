@@ -1,0 +1,21 @@
+- name: Create web root directory
+  file:
+    path: /var/www/html
+    state: directory
+    owner: www-data
+    group: www-data
+  tags: app
+
+- name: Upload website tarball
+  copy:
+    src: site.tar.gz
+    dest: /tmp/site.tar.gz
+  tags: app
+
+- name: Extract website
+  unarchive:
+    src: /tmp/site.tar.gz
+    dest: /var/www/html
+    remote_src: yes
+  tags: app
+
